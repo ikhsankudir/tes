@@ -11,6 +11,10 @@ IMAGE="cloudflare/cloudflared:latest"
 echo "Removing any existing cloudflared container..."
 docker rm -f cloudflared-tunnel || true
 
+# Tarik gambar Docker terbaru
+echo "Pulling the latest cloudflared Docker image..."
+docker pull $IMAGE
+
 # Jalankan container cloudflared dengan tunnel
 echo "Starting cloudflared tunnel..."
 docker run -d \
